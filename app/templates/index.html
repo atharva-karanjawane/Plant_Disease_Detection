@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="text-center">Crop Disease Prediction</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead text-center">Upload an image of a crop leaf to detect diseases</p>
+                        
+                        <form action="/predict" method="post" enctype="multipart/form-data" class="mt-4">
+                            <div class="mb-3 text-center">
+                                <label for="file" class="form-label">Select an image:</label>
+                                <input type="file" class="form-control" id="file" name="file" accept="image/*" required>
+                            </div>
+                            
+                            <div class="mb-3 text-center">
+                                <img id="preview" class="img-fluid d-none mt-3 mb-3" alt="Image Preview">
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg">Predict Disease</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p>Supported crops: Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+#preview {
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.img-fluid {
+    max-height: 300px;
+    object-fit: contain;
+}
